@@ -10,7 +10,7 @@ namespace TemaLab2
     {
         string marca;
         string culoare;
-        int pret;
+        long pret;
 
         public Automobile()
         {
@@ -18,7 +18,7 @@ namespace TemaLab2
             culoare = string.Empty;
             pret = 0;
         }
-        public Automobile(string _marca, string _culoare, int _pret)
+        public Automobile(string _marca, string _culoare, long _pret)
         {
             marca = _marca;
             culoare = _culoare;
@@ -27,7 +27,32 @@ namespace TemaLab2
 
         public string afisare()
         {
-            return string.Format("Se alege un automobil marca {0}, de culoare {1}, la pretul de {2} lei", marca, culoare, pret);
+            return string.Format(" {0}, de culoare {1}, la pretul de {2} euro \n", marca, culoare, pret);
         }
+
+        public string getmarca()
+        {
+            return marca;
+        }
+
+        public string getculoare()
+        {
+            return culoare;
+        }
+
+        public long getpret()
+        {
+            return pret;
+        }
+
+        public string verifica (long _buget)
+        {
+            if (_buget >= pret)
+                return string.Format("Isi permite masina");
+            else
+                return string.Format("Nu isi permite masina");
+        }
+
+        
     }
 }
